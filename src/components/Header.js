@@ -1,8 +1,9 @@
 import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import { useLocation } from 'react-router-dom';
 
 const navigation = [
-  { name: 'Home', href: '/home', current: true },
+  { name: 'Home', href: '/home', current: false },
   { name: 'Reserve', href: '/reserve', current: false },
   { name: 'Menu', href: '/menu', current: false },
   { name: 'Facility', href: '/facility', current: false },
@@ -14,6 +15,14 @@ function classNames(...classes) {
 }
 
 export default function Header() {
+  const location = useLocation();
+
+  // Update navigation based on current path
+  const updatedNavigation = navigation.map(item => ({
+    ...item,
+    current: item.href === location.pathname
+  }));
+
   return (
     <Disclosure as="nav" className="bg-gray-800">
       <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -37,7 +46,7 @@ export default function Header() {
             </div>
             <div className="hidden sm:ml-6 sm:block">
               <div className="flex space-x-4">
-                {navigation.map((item) => (
+                {updatedNavigation.map((item) => (
                   <a
                     key={item.name}
                     href={item.href}
@@ -103,7 +112,7 @@ export default function Header() {
 
       <DisclosurePanel className="sm:hidden">
         <div className="space-y-1 px-2 pb-3 pt-2">
-          {navigation.map((item) => (
+          {updatedNavigation.map((item) => (
             <DisclosureButton
               key={item.name}
               as="a"

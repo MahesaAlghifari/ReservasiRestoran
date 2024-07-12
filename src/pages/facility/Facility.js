@@ -1,14 +1,21 @@
 import React from 'react'
-import Card from './components/Card'
-import Card2 from './components/Card copy'
+import CardRight from './components/CardRight'
+import CardLeft from './components/CardLeft'
 
 export default function Facility() {
   return (
-    <div>
-        <h1>Facility</h1>
-      <Card/>
-      <Card2/>
-      <Card/>
+    <div className='container container-lg pb-48'>
+      <div className="text-center py-20">
+        <p className="text-xl underline tracking-tight text-gray-900 lg:text-5xl">
+          OUR FACILITY
+        </p>
+        <p className="mt-6 text-lg leading-8 text-gray-600">
+          Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet
+          fugiat veniam occaecat fugiat aliqua.
+        </p>
+      </div>
+        <CardLeft />
+        <CardRight/>
     </div>
   )
 }

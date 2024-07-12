@@ -54,7 +54,7 @@
 @media only screen and (max-width: 768px) {
     .hero .hero-image,
     .hero .hero-caption {
-        min-height: 90vh;
+        min-height: 100vh;
     }
     .hero .hero-cta {
         @apply w-12 h-12;

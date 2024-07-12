@@ -5,6 +5,9 @@ import Home from '../pages/home/Home';
 import Reserve from '../pages/reserve/Reserve';
 import Menu from '../pages/menu/Menu';
 import Facility from '../pages/facility/Facility';
+import Profile from '../pages/profile/Profile';
+import Category from '../pages/menu/category/Category';
+import DetailMenu from '../pages/menu/detail/DetailMenu';
 
 export default function BaseRoute() {
   const routes = [
@@ -13,6 +16,9 @@ export default function BaseRoute() {
     { path: 'menu', element: <Menu /> },
     { path: 'facility', element: <Facility /> },
     { path: 'menu', element: <Menu /> },
+    { path: 'menu/category', element: <Category /> },
+    { path: 'menu/category/detail', element: <DetailMenu /> },
+    { path: 'profile', element: <Profile /> },
   ];
 
   return (

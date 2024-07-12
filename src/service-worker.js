@@ -71,24 +71,6 @@ registerRoute(({ url }) => url.origin === 'https://fonts.googleapis.com' || url.
   ]
 }));
 
-registerRoute(({ url }) => url.origin.includes("qorebase.io"), new NetworkFirst({
-  cacheName: 'apidata',
-  plugins: [
-    new ExpirationPlugin({
-      maxAgeSeconds: 360,
-      maxEntries: 30
-    })
-  ]
-}));
-
-registerRoute(({ url }) => /\.(jpe?g|png)$/i.test(url.pathname), new StaleWhileRevalidate({
-  cacheName: 'apiimage',
-  plugins: [
-    new ExpirationPlugin({
-      maxEntries: 30
-    })
-  ]
-}));
 
 self.addEventListener('install', function (event) {
   console.log("SW Install");
@@ -112,13 +94,6 @@ self.addEventListener('message', (event) => {
   }
 });
 
-self.addEventListener('push', function (event) {
-  event.waitUntil(
-    self.registration.showNotification("LuxSpace", {
-      icon: "./icon-120.png",
-      body: event.data.text()
-    })
-  );
-})
+
 
 // Any other custom service worker logic can go here.
