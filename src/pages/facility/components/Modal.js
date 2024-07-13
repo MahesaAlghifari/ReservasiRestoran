@@ -17,6 +17,7 @@ function Modal({handleShowodal}) {
                             allowFullScreen
                         ></iframe>
                     </div>
+                    
                 </div>
             </div>
         </div>

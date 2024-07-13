@@ -1,6 +1,5 @@
 import React from 'react'
-import CardRight from './components/CardRight'
-import CardLeft from './components/CardLeft'
+import CardLeft from './components/CardCategories'
 
 export default function Menu() {
   return (
@@ -15,7 +14,7 @@ export default function Menu() {
         </p>
       </div>
         <CardLeft />
-        <CardRight/>
+        
     </div>
   )
 }

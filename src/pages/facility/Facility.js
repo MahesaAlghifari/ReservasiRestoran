@@ -1,6 +1,6 @@
 import React from 'react'
-import CardRight from './components/CardRight'
 import CardLeft from './components/CardLeft'
+import CardRight from './components/CardRight'
 
 export default function Facility() {
   return (
@@ -15,7 +15,6 @@ export default function Facility() {
         </p>
       </div>
         <CardLeft />
-        <CardRight/>
     </div>
   )
 }
